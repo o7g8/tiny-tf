@@ -124,7 +124,7 @@ class SolverWrapper(object):
                    'weights from {:s}').format(self.pretrained_model)
                 self.net.load(self.pretrained_model, sess, True)
             except:
-                raise 'Check your pretrained model {:s}'.format(self.pretrained_model)
+                raise RuntimeError('Check your pretrained model {:s}'.format(self.pretrained_model))
 
         # Resuming a trainer if restore=True, need to specify a ckpt directory
         if restore:
